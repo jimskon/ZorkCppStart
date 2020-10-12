@@ -32,11 +32,14 @@ Game::Game(string fileName, string id) {
   world=World(aNode);
 }
 
+Game::Game() {
+}
+
 string Game::processCommand(string id, string command) {
   vector<string> words;
   string message="";
 
-
+  cout << "processCommand:" << id <<":" << command << endl;
   words = parseStr(command);
 
   if (words[0] == "go") {
@@ -53,6 +56,7 @@ string Game::processCommand(string id, string command) {
   } else if (words[0] == "i" || words[0] == "inventory") {
     message+="Inventory not implemented\n";
   }
+  cout << "game:" << message << endl;
   return message;
 }
 

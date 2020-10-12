@@ -12,6 +12,7 @@ class Game
   World world;
 
   Game(string fileName, string id);
+  Game();
   string start(string id);
   string processCommand(string c, string id);
 
