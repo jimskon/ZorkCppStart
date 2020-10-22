@@ -59,6 +59,7 @@ PutHTML:
 	cp zork.html /var/www/html/class/softdev/$(user)/CppGame/
 	cp zork.css /var/www/html/class/softdev/$(user)/CppGame/
 	cp zork.js /var/www/html/class/softdev/$(user)/CppGame/
+	cp favicon.ico /var/www/html/class/softdev/$(user)/CppGame/
 	echo "Current contents of your HTML directory: "
 	ls -l /var/www/html/class/softdev/$(user)/CppGame/
 
