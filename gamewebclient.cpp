@@ -46,9 +46,11 @@ int main() {
   sendfifo.send(message);
 
   /* Get a message from a server */
-  recfifo.openread();
-  string reply = recfifo.recv();
 
+  string reply;
+  recfifo.openread();
+  reply = recfifo.recv();
+    
   recfifo.fifoclose();
   sendfifo.fifoclose();
   cout  << reply << endl;
