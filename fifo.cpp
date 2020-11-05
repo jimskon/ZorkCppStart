@@ -4,8 +4,8 @@
 * copyright : (C) 2009 by Jim Skon
 *
 * This code permits the creation and use of FIFOs for communication
-* between processes.  
-* 
+* between processes.
+*
 * the named piped is created and used in /tmp
 *
 ***************************************************************************/
@@ -69,11 +69,11 @@ bool Fifo::openread() {
   }
   return true;
 }
-  
+
 void Fifo::fifoclose() {
   close(fd);
   fd = 0;
-  
+
 }
 
 
@@ -84,7 +84,7 @@ string Fifo::recv() {
     return ("");
   }
 
-  int length, i;
+  int i;
   string message;
   bool done;
   int bytes;
@@ -146,4 +146,3 @@ void Fifo::send(string message) {
     }
   return;
 }
-
