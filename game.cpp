@@ -45,9 +45,10 @@ string Game::processCommand(string id, string command) {
   if (words[0] == "go") {
     if (words.size() > 1) {
       string nextRoom=world.rooms[world.location].checkBorder(words[1]);
-      if (nextRoom!="")
+      if (nextRoom!="") {
         world.location=nextRoom;
-        message+= world.rooms[world.location].describe();
+      }
+      message+= world.rooms[world.location].describe();
     } else {
       message+="Can't go there?\n";
     }

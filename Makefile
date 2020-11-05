@@ -6,7 +6,7 @@ user=skon
 #For Optimization
 #CFLAGS= -O2
 #For debugging
-CFLAGS= -std=c++14
+CFLAGS= -std=c++14 -Wall
 
 RM= /bin/rm -f
 

@@ -25,7 +25,6 @@ string send_fifo = "Namerequest";
 
 int main() {
   Cgicc cgi;    // Ajax object
-  char *cstr;
   // Create AJAX objects to recieve information from web page.
   form_iterator idit = cgi.getElement("id");
   form_iterator commandit = cgi.getElement("command");
@@ -50,7 +49,7 @@ int main() {
   string reply;
   recfifo.openread();
   reply = recfifo.recv();
-    
+
   recfifo.fifoclose();
   sendfifo.fifoclose();
   cout  << reply << endl;

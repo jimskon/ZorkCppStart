@@ -35,7 +35,7 @@ Room::Room(XMLNode aNode) {
 string Room::describe() {
   string message="";
   message += description + "\n";
-  int i=0;
+  size_t i=0;
   message +=  "The room contains:\n";
   while (i<items.size()) {
     message +=  items[i] + "\n";
@@ -45,9 +45,9 @@ string Room::describe() {
 }
 
 string Room::checkBorder(string c) {
-  int l = borders.size();
+  size_t l = borders.size();
   string room="";
-  int i=0;
+  size_t i=0;
   while (i<l && borders[i].direction!=c) {
     //cout << "Border Check:" << i << borders[i].name << borders[i].direction  << endl;
     i++;

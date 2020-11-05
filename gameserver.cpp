@@ -65,11 +65,12 @@ int main() {
 
 
   while (1) {
-    int pos;
+    size_t pos;
     string gameId;
 
     /* Get a message from a client */
     recfifo.openread();
+    inMessage="";
     inMessage = recfifo.recv();
     /* Parse the incoming message */
     /* Form:  $type*name  */
