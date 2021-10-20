@@ -45,8 +45,12 @@ bool Fifo::openwrite() {
     return true;
   }
   // Open the pipe
-  fd = open(pipename.c_str(),O_WRONLY);
+  fd = open(pipename.c_str(),O_WRONLY | O_NONBLOCK );
 
+  if (fd == -1) {
+    cout << "Error - no game server\n";
+    exit(0);
+  }
   // Check if open succeeded
   if (fd ==-1) {
 	cout << "Error - bad input pipe: " << pipename << endl;
@@ -60,7 +64,9 @@ bool Fifo::openread() {
     return true;
   }
   // Open the pipe
+  cout << "OPEN read Pipe" << endl;
   fd = open(pipename.c_str(),O_RDONLY);
+  cout << "OPEN read Pipe doen" << endl;
 
   // Check if open succeeded
   if (fd ==-1) {

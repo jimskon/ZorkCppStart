@@ -20,22 +20,22 @@ int main() {
   string type;
 
   // create the FIFOs for communication
-	Fifo recfifo(receive_fifo);
-	Fifo sendfifo(send_fifo);
-
-
-
+  Fifo recfifo(receive_fifo);
+  Fifo sendfifo(send_fifo);
+    
   // Do the start
   sendfifo.openwrite();
-	sendfifo.send(gameId+"$Start");
-
-	/* Get a message from a server */
-	recfifo.openread();
-	reply = recfifo.recv();
+  cout << "Open write" << endl;
+  sendfifo.send(gameId+"$Start");
+  cout << "send" << endl;
+  
+  /* Get a message from a server */
+  recfifo.openread();
+  reply = recfifo.recv();
   cout << reply << endl;
-
-	recfifo.fifoclose();
-	sendfifo.fifoclose();
+  
+  recfifo.fifoclose();
+  sendfifo.fifoclose();
 
 
   while (1) {
